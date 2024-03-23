@@ -82,7 +82,7 @@ RUN dpkg --add-architecture ${TARGETARCH:-arm64} && apt update \
 RUN useradd -rm -d /var/lib/postgres -s /bin/bash -g postgres -G sudo docker
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
-COPY --from=build --chmod=755 /usr/lib/postgresql/13/bin/pgcopydb /usr/local/bin
+COPY --from=build --chmod=755 /usr/lib/postgresql/14/bin/pgcopydb /usr/local/bin
 
 USER docker
 
